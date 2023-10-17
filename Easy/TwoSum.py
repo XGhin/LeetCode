@@ -1,15 +1,9 @@
-from typing import List
-nums = [5, 4, 3, 8, 15]
-
-target = 9
-
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
-        for i in range(n - 1):
+        for i in range(n):
             for j in range(i + 1, n):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-        return []  # No solution found
-
-
+                temp = nums[i] + nums[j]
+                if temp == target:
+                    print("({}), ({})".format(i, j))
+                    return i, j
